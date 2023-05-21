@@ -1,0 +1,28 @@
+
+
+.mainCard{
+    /* background-color: orange; */
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 15px;
+    width: 80%;
+    border: 1px solid grey;
+    border-radius: 5px;
+
+}
+
+.moviePoster{
+    width: 120px;
+}
+
+
+.movieYear{
+    color: rgb(97, 95, 95);
+}
+
+
+.movieName__section , .movieYear__section{
+    /* background-color: green; */
+    padding:15px;
+}
