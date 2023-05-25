@@ -4,12 +4,18 @@
     /* background-color: orange; */
     display: flex;
     justify-content: start;
-    align-items: center;
+    align-items: end;
     padding: 15px;
-    width: 80%;
+    width: 80vw;
     border: 1px solid grey;
     border-radius: 5px;
+    margin: 15px;
+    box-shadow: 5px 12px 12px grey;
 
+}
+.movieInfo{
+    
+    width: 100%;
 }
 
 .moviePoster{
@@ -25,4 +31,18 @@
 .movieName__section , .movieYear__section{
     /* background-color: green; */
     padding:15px;
+}
+
+.movieName{
+    width: 100%;
+}
+
+.wishlist {
+    /* Add the following styles */
+    display: flex;
+  
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: auto;
+  
 }

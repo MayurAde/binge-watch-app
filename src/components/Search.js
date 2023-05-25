@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import MovieCard from "./MovieCard";
+import DisplaySearch from "./DisplaySearch";
 import "./Search.css";
 
 const Search = (props) => {
@@ -24,12 +25,6 @@ const Search = (props) => {
         return response.json();
       })
       .then((data) => {
-        // const imgSrc = `https://image.tmdb.org/t/p/w500/${data.results[0].poster_path}`;
-        // document.querySelector(".poster").src = imgSrc;
-        // document.querySelector(".title").textContent =
-        //   data.results[0].original_title;
-        // document.querySelector(".overview").textContent =
-        //   data.results[0].overview;
         setResults([...data.results]);
         return data.results;
       })
@@ -50,22 +45,16 @@ const Search = (props) => {
     <div className="searchSection">
       <form onSubmit={searchHandler}>
         <input
+          class="form-control mr-sm-2"
           type="search"
           onChange={searchChangeHandler}
           value={searchTerm}
+          placeholder="Search"
+          aria-label="Search"
         ></input>
       </form>
-      {console.log(results)}
-      {results.length > 0 && (
-        <MovieCard
-          name={results[0].title}
-          year={results[0].release_date}
-          imgUrl={results[0].poster_path}
-        />
-      )}
-      {/* <img className="poster" src=""></img>
-      <h1 className="title"></h1>
-      <p className="overview"></p> */}
+
+      {results.length > 0 && <DisplaySearch results={results} />}
     </div>
   );
 };
