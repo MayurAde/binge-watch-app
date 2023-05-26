@@ -36,6 +36,7 @@ const Search = (props) => {
   const searchHandler = (event) => {
     event.preventDefault();
     searchMovie(searchTerm);
+    setResults([]);
   };
 
   const searchChangeHandler = (event) => {
@@ -45,7 +46,7 @@ const Search = (props) => {
     <div className="searchSection">
       <form onSubmit={searchHandler}>
         <input
-          class="form-control mr-sm-2"
+          className="form-control mr-sm-2"
           type="search"
           onChange={searchChangeHandler}
           value={searchTerm}

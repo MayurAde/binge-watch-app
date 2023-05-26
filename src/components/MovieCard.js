@@ -23,7 +23,12 @@ export default function MovieCard(props) {
           <h1 className="movieName">{props.name}</h1>
         </div>
         <div className="movieYear__section">
-          <h3 className="movieYear">{props.year.slice(0, 4)}</h3>
+          <h3 className="movieYear">
+            {props.year == "" ? "Unavailable" : props.year.slice(0, 4)}
+          </h3>
+        </div>
+        <div className="movieRating__section">
+          <h3 className="movieRating">{props.rating.toFixed(2)}/10</h3>
         </div>
         <div className="wishlist">
           <button
