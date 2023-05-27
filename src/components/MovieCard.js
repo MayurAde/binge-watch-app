@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./MovieCard.css";
 
 export default function MovieCard(props) {
+  const [wishlistBtnTxt, setWishlistBtnTxt] = useState("Add to Watchlist");
+
+  const wishlistHandler = () => {
+    if (wishlistBtnTxt == "Add to Watchlist") {
+      setWishlistBtnTxt("Added");
+    } else {
+      setWishlistBtnTxt("Add to Watchlist");
+    }
+  };
   return (
     <div className="mainCard">
       <section>
@@ -32,12 +41,10 @@ export default function MovieCard(props) {
         </div>
         <div className="wishlist">
           <button
-            onClick={() => {
-              console.log("clicked");
-            }}
-            className="btn btn-dark"
+            onClick={wishlistHandler}
+            className="btn btn-dark wishlistBtn"
           >
-            Add to Watchlist
+            {wishlistBtnTxt}
           </button>
         </div>
       </section>

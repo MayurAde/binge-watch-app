@@ -53,7 +53,7 @@ export default function DisplaySearch(props) {
 
   return (
     <div className="resultBox">
-      <FilterDropdown sorter={sortHandler} />
+      <FilterDropdown className="sortBy" sorter={sortHandler} />
       {vals.map((item) => (
         <div key={item.id}>
           <MovieCard

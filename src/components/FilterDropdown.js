@@ -13,10 +13,13 @@ export default function FilterDropdown(props) {
 
   return (
     <div>
-      <h3>Sort by</h3>
-      <select value={selected} onChange={changeHandler}>
+      <span>Sort by </span>
+      <select value={selected} defaultValue={""} onChange={changeHandler}>
+        <option value={""} disabled hidden>
+          Recommended
+        </option>
         <option value="popularity">Popularity</option>
-        <option value="releaseOldToNew">Release Date: Old to New</option>
+        <option value="releaseOldToNew">Release Year: Old to New</option>
         <option value="releaseNewToOld">Release Year: New to Old</option>
         <option value="rating">Rating</option>
       </select>
