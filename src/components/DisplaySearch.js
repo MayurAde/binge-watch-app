@@ -50,7 +50,10 @@ export default function DisplaySearch(props) {
       setVals(updatedVals);
     }
   };
-
+  const onAddWatchlistHandler = (val) => {
+    props.onHandleWatchList(val);
+    // console.log(val);
+  };
   return (
     <div className="resultBox">
       <FilterDropdown className="sortBy" sorter={sortHandler} />
@@ -61,6 +64,7 @@ export default function DisplaySearch(props) {
             year={item.release_date}
             imgUrl={item.poster_path}
             rating={item.vote_average}
+            onAddWatchlist={onAddWatchlistHandler}
           />
         </div>
       ))}

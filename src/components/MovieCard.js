@@ -3,12 +3,17 @@ import "./MovieCard.css";
 
 export default function MovieCard(props) {
   const [wishlistBtnTxt, setWishlistBtnTxt] = useState("Add to Watchlist");
+  const [wishlistBtnClr, setWishlistBtnClr] = useState("dark");
 
   const wishlistHandler = () => {
     if (wishlistBtnTxt == "Add to Watchlist") {
       setWishlistBtnTxt("Added");
+      setWishlistBtnClr("success");
+      props.onAddWatchlist(1);
     } else {
       setWishlistBtnTxt("Add to Watchlist");
+      setWishlistBtnClr("dark");
+      props.onAddWatchlist(-1);
     }
   };
   return (
@@ -42,7 +47,7 @@ export default function MovieCard(props) {
         <div className="wishlist">
           <button
             onClick={wishlistHandler}
-            className="btn btn-dark wishlistBtn"
+            className={`btn btn-${wishlistBtnClr} wishlistBtn`}
           >
             {wishlistBtnTxt}
           </button>

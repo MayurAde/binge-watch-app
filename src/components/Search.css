@@ -29,3 +29,10 @@ input{
     /* height: 70px; */
     padding: 15px;
 }
+
+.watchlistItems{
+align-self: end;
+position: fixed;
+right: 15px;
+top: 15px;
+}

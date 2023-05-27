@@ -6,6 +6,7 @@ import "./Search.css";
 const Search = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState([]);
+  const [watchlistItems, setWatchlistItems] = useState(0);
 
   const searchMovie = (movie) => {
     const options = {
@@ -42,8 +43,14 @@ const Search = (props) => {
   const searchChangeHandler = (event) => {
     setSearchTerm(event.target.value);
   };
+
+  const addToWatchlist = (val) => {
+    console.log(val);
+    setWatchlistItems(val + watchlistItems);
+  };
   return (
     <div className="searchSection">
+      <h1 className="watchlistItems">🕶 Watchlist({watchlistItems})</h1>
       <form onSubmit={searchHandler}>
         <input
           className="form-control mr-sm-2"
@@ -54,8 +61,9 @@ const Search = (props) => {
           aria-label="Search"
         ></input>
       </form>
-
-      {results.length > 0 && <DisplaySearch results={results} />}
+      {results.length > 0 && (
+        <DisplaySearch results={results} onHandleWatchList={addToWatchlist} />
+      )}
     </div>
   );
 };
